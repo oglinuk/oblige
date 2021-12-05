@@ -650,7 +650,9 @@ static void Q2_WriteNode(quake_node_c *node)
 
 	if (flipped)
 	{
-		std::swap(raw_node.children[0], raw_node.children[1]);
+		unsigned int a = raw_node.children[0];
+		unsigned int b = raw_node.children[1];
+		std::swap(a, b);
 	}
 
 
@@ -881,7 +883,9 @@ static void Q2_Model_Nodes(quake_mapmodel_c *model, float *mins, float *maxs)
 
 		if (flipped)
 		{
-			std::swap(raw_node.children[0], raw_node.children[1]);
+			unsigned int a = raw_node.children[0];
+			unsigned int b = raw_node.children[1];
+			std::swap(a, b);
 		}
 
 		raw_node.firstface = face_base + face;
